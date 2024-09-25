@@ -1,0 +1,94 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("slushy hub universal", "Synapse")
+
+local Tab = Window:NewTab("Main")
+
+local Section = Tab:NewSection("Main")
+
+Section:NewSlider("Speed", "speed slider to change walkspeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewSlider("jumppower", "jumppower slider to change your jumppower", 1000, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("bloxfruits")
+
+Section:NewSlider("dash length", "bloxfruits dash length", 500, 10, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character:SetAttribute("DashLength", s)
+end)
+
+local Tab = Window:NewTab("universal hubs")
+
+local Section = Tab:NewSection("hubs")
+
+Section:NewButton("roexp hub: join their discord discord.gg/roexp", "roexp hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/drissez1/RoExploit/main/kawaii%20bypass'))()
+end)
+
+Section:NewButton("speedy hub", "speedy hub", function()
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "speedy hub", HidePremium = false, IntroText = "speedy hub loading", SaveConfig = true, ConfigFolder = "speedy hub"})
+
+OrionLib:MakeNotification({
+	Name = "wsp",
+	Content = "wsp "..Player.Name.."",
+	Image = "rbxassetid://18695772035",
+	Time = 5
+})
+wait(1.5)
+    OrionLib:MakeNotification({
+        Name = "have fun!",
+        Content = "have fun, "..Player.Name.."",
+        Image = "rbxassetid://18695772035",
+        Time = 5
+    })
+
+    local Tab = Window:MakeTab({
+        Name = "main shit",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    
+    local Section = Tab:AddSection({
+        Name = "main"
+    })
+
+    Tab:AddSlider({
+        Name = "speed",
+        Min = 16,
+        Max = 500,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "speed",
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end    
+    })
+
+    Tab:AddSlider({
+        Name = "jump height",
+        Min = 37,
+        Max = 500,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "height",
+        Callback = function(Value)
+         game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+        end    
+       })
+end)
+
+local Tab = Window:NewTab("settings")
+
+local Section = Tab:NewSection("toggle ui")
+
+Section:NewKeybind("toggle ui", "just a keybind to toggle the ui!", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
