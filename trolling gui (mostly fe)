@@ -1,0 +1,153 @@
+--[[
+		Gui2Lua™
+		10zOfficial
+		Version 1.0.0
+]]
+
+-- Instances
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local TextButton_4 = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local UserInputService = game:GetService("UserInputService")
+
+-- Properties
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.265, 0, 0.265, 0)
+Frame.Size = UDim2.new(0, 541, 0, 392)
+
+UICorner.Parent = Frame
+UICorner.CornerRadius = UDim.new(0.2, 8)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.297, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 206, 0, 60)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "trolling gui"
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextScaled = true
+TextLabel.TextWrapped = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+TextButton.BorderColor3 = Color3.new(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.052, 0, 0.273, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "washiez fling (op)"
+TextButton.TextColor3 = Color3.new(1, 1, 1)
+TextButton.TextScaled = true
+TextButton.TextWrapped = true
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+TextButton_2.BorderColor3 = Color3.new(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.63, 0, 0.273, 0)
+TextButton_2.Size = UDim2.new(0, 200, 0, 50)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "infinite yield"
+TextButton_2.TextColor3 = Color3.new(1, 1, 1)
+TextButton_2.TextScaled = true
+TextButton_2.TextWrapped = true
+
+TextButton_3.Parent = Frame
+TextButton_3.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+TextButton_3.BorderColor3 = Color3.new(0, 0, 0)
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Position = UDim2.new(0.63, 0, 0.559, 0)
+TextButton_3.Size = UDim2.new(0, 200, 0, 50)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "nameless admin"
+TextButton_3.TextColor3 = Color3.new(1, 1, 1)
+TextButton_3.TextScaled = true
+TextButton_3.TextWrapped = true
+
+TextButton_4.Parent = Frame
+TextButton_4.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+TextButton_4.BorderColor3 = Color3.new(0, 0, 0)
+TextButton_4.BorderSizePixel = 0
+TextButton_4.Position = UDim2.new(0.024, 0, 0.526, 0)
+TextButton_4.Size = UDim2.new(0, 242, 0, 75)
+TextButton_4.Font = Enum.Font.SourceSans
+TextButton_4.Text = "ultimate washiez troller gui (creds to thepro_npc on discord)"
+TextButton_4.TextColor3 = Color3.new(1, 1, 1)
+TextButton_4.TextScaled = true
+TextButton_4.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.new(0.0901961, 0.0901961, 0.0901961)
+TextLabel_2.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.309, 0, 0.908, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 36)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "V1.00"
+TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextWrapped = true
+
+-- Button Functions
+
+TextButton.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/norizzaa/slushy-hub-universal-kavo-ui/refs/heads/main/washiez%20fling'))()
+end)
+
+TextButton_2.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+TextButton_3.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+end)
+
+TextButton_4.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/thepro1npc/randomscripts/main/script.lua'))()
+end)
+
+-- Dragging functionality
+
+local dragging = false
+local dragInput, mousePos, framePos
+
+Frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        mousePos = input.Position
+        framePos = Frame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+Frame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - mousePos
+        Frame.Position = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
+    end
+end)
